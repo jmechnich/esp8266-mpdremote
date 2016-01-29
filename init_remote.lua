@@ -31,13 +31,15 @@ remote.init_led()
 remote.init_buttons()
 
 require('network')
+require('telnet')
+
 network.init()
 network.waitconnect(
    function () remote.blink(1) end,
    function ()
       remote.blink(2)
       network.info()
-      network.setupTelnetServer()
+      telnet.setupTelnetServer()
       print("Started telnet server")
       remote.restartSleepTimer()
    end

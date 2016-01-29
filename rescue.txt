@@ -1,3 +1,19 @@
+On ESP8266:
+====================
+-- stop sleep timer
+tmr.stop(2)
+
 file.remove("init.lua")
+
 require('network')
-network.setupTelnetServer()
+network.info()
+
+require('telnet')
+telnet.setupTelnetServer()
+
+In local shell:
+====================
+# reupload everything
+luatool.py -w
+rm .timestamp
+espupload
