@@ -32,12 +32,22 @@ remote.init_buttons()
 
 require('network')
 require('telnet')
+require('mpd')
 
-network.init()
+network.init(true)
 network.waitconnect(
    function () remote.blink(1) end,
    function ()
       remote.blink(2)
+      if hostmapping ~= nil then
+         for k,v in pairs(hostmapping) do
+            if k == network.ssid then
+               mpd.host = v
+               print("Setting mpd host to "..mpd.host)
+               break
+            end
+         end
+      end
       network.info()
       telnet.setupTelnetServer()
       print("Started telnet server")

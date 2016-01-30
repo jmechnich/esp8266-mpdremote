@@ -7,6 +7,7 @@ P.pass = nil
 
 function P.init(force)
    if wifi.sta.status() == 1 and not force then
+      P.ssid, P.pass = wifi.sta.getconfig()
       return
    end
    wifi.setmode(wifi.STATION)
