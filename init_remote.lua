@@ -29,6 +29,7 @@ remote.buttons = {
 remote.init_resetsw()
 remote.init_led()
 remote.init_buttons()
+remote.init_timer()
 
 require('network')
 require('telnet')
@@ -51,6 +52,6 @@ network.waitconnect(
       network.info()
       telnet.setupTelnetServer()
       print("Started telnet server")
-      remote.restartSleepTimer()
+      remote.start_timer()
    end
 )

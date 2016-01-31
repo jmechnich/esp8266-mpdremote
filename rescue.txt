@@ -1,7 +1,7 @@
 On ESP8266:
 ====================
 -- stop sleep timer
-tmr.stop(2)
+tmr.unregister(2)
 
 file.remove("init.lua")
 

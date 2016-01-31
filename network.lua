@@ -56,7 +56,7 @@ function P.connect(ssid,pass)
 end
 
 function P.waitconnect( waitfun, connfun)
-   tmr.alarm(0, 1000, 1, function()
+   tmr.alarm(0, 1000, tmr.ALARM_AUTO, function()
                 if wifi.sta.getip() == nil then
                    if waitfun == nil then
                       print("Connecting to AP...")
@@ -69,7 +69,7 @@ function P.waitconnect( waitfun, connfun)
                    else
                       connfun()
                    end
-                   tmr.stop(0)
+                   tmr.unregister(0)
                 end
    end)
 end
