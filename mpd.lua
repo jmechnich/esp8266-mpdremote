@@ -47,8 +47,15 @@ function P.send (self,msg,parseFunc)
                else
                   status = 2
                end
-               if status == 0 then
+               if status ~= 2 then
                   sck:close()
+                  sock = nil
+                  status = nil
+                  idx = nil
+                  last = nil
+                  handled = nil
+                  i = nil
+                  collectgarbage()
                   return
                else
                   print( status.." "..str:sub(idx+1,last-1))
@@ -75,8 +82,10 @@ function P.toggle (self)
                P:send("pause")
             end
          end
+         col = nil
          return true
       end
+      col = nil
       return false
    end
    P:send("status",togglePlayback)
