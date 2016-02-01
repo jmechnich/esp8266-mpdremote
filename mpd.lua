@@ -91,4 +91,21 @@ function P.toggle (self)
    P:send("status",togglePlayback)
 end
 
+function P.sendArbitrary(self,port,msg)
+   if port == nil then print("Port not set"); return end
+   if msg  == nil then print("Message empty"); return end
+   local sock = net.createConnection( net.TCP, 0)
+   sock:on("connection", function(sck)
+              sock:send(msg)
+              sock:close()
+              sock = nil
+              collectgarbage()
+   end)
+   sock:on("disconnection", function(sck)
+              sock = nil
+              collectgarbage()
+   end)
+   sock:connect(port,self.host)
+end
+
 return mpd
