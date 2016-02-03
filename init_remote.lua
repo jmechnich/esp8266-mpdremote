@@ -53,6 +53,7 @@ network.waitconnect(
       network.info()
       telnet.setupTelnetServer()
       print("Started telnet server")
+      mpd:sendArbitrary(6789,"beep")
       remote.start_timer()
    end,
    function () node.dsleep(0) end
