@@ -37,7 +37,7 @@ encoding utf-8
 Sheet 1 1
 Title "esp8266-mpdremote"
 Date "2016-01-31"
-Rev "03"
+Rev "04"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -269,11 +269,9 @@ Connection ~ 5100 5700
 Wire Wire Line
 	7200 5000 7200 5350
 Wire Wire Line
-	3550 5000 7200 5000
+	2650 5000 7200 5000
 Wire Wire Line
 	6150 5000 6150 5350
-Wire Wire Line
-	3550 2750 3550 5350
 Connection ~ 6150 5000
 Wire Wire Line
 	5100 5350 5100 5000
@@ -286,8 +284,6 @@ Wire Wire Line
 	4250 3350 4250 5350
 Wire Wire Line
 	4250 3350 4450 3350
-Wire Wire Line
-	3450 3250 4450 3250
 Wire Wire Line
 	6600 3050 6600 5350
 Wire Wire Line
@@ -322,8 +318,6 @@ Wire Wire Line
 Connection ~ 7200 5700
 Connection ~ 8650 5100
 Wire Wire Line
-	3450 3750 4250 3750
-Wire Wire Line
 	4450 3450 4450 5100
 Connection ~ 4450 5100
 Wire Wire Line
@@ -335,7 +329,6 @@ Wire Wire Line
 	3850 2950 4150 2950
 Wire Wire Line
 	3450 2750 4450 2750
-Connection ~ 3550 5000
 Connection ~ 3550 2750
 Connection ~ 7850 3150
 Wire Wire Line
@@ -391,11 +384,7 @@ F 3 "" H 3000 3450 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	6700 4750 6700 2950
-Wire Wire Line
-	3450 4750 6700 4750
 Connection ~ 4150 3250
-Wire Wire Line
-	3450 4250 6600 4250
 Connection ~ 6600 4250
 Wire Wire Line
 	3150 4450 3450 4450
@@ -471,4 +460,65 @@ Connection ~ 8300 5100
 Connection ~ 8300 5600
 Text Notes 9100 5400 0    60   ~ 0
 Power\n1 - 3V\n2 - GND
+$Comp
+L R R8
+U 1 1 56B3878E
+P 3600 3250
+F 0 "R8" V 3680 3250 50  0000 C CNN
+F 1 "130" V 3600 3250 50  0000 C CNN
+F 2 "" V 3530 3250 30  0000 C CNN
+F 3 "" H 3600 3250 30  0000 C CNN
+	1    3600 3250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R7
+U 1 1 56B38868
+P 3600 3750
+F 0 "R7" V 3680 3750 50  0000 C CNN
+F 1 "130" V 3600 3750 50  0000 C CNN
+F 2 "" V 3530 3750 30  0000 C CNN
+F 3 "" H 3600 3750 30  0000 C CNN
+	1    3600 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R5
+U 1 1 56B388DC
+P 3600 4250
+F 0 "R5" V 3680 4250 50  0000 C CNN
+F 1 "130" V 3600 4250 50  0000 C CNN
+F 2 "" V 3530 4250 30  0000 C CNN
+F 3 "" H 3600 4250 30  0000 C CNN
+	1    3600 4250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R6
+U 1 1 56B3894B
+P 3600 4750
+F 0 "R6" V 3680 4750 50  0000 C CNN
+F 1 "130" V 3600 4750 50  0000 C CNN
+F 2 "" V 3530 4750 30  0000 C CNN
+F 3 "" H 3600 4750 30  0000 C CNN
+	1    3600 4750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3750 3250 4450 3250
+Wire Wire Line
+	3750 3750 4250 3750
+Wire Wire Line
+	3750 4250 6600 4250
+Wire Wire Line
+	3750 4750 6700 4750
+Wire Wire Line
+	3550 5000 3550 5350
+Wire Wire Line
+	2650 5000 2650 2400
+Wire Wire Line
+	2650 2400 3550 2400
+Wire Wire Line
+	3550 2400 3550 2750
+Connection ~ 3550 5000
 $EndSCHEMATC
